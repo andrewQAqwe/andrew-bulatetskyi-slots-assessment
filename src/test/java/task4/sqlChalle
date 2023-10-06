@@ -1,0 +1,21 @@
+--1. Create an SQL Query which retrieves the id, name and surname of all registered users under country Malta.
+SELECT id, name, surname
+FROM users
+WHERE country = 'MT';
+--------------------------
+--2. Create an SQL Query which retrieves the id, name, surname of all registered users that are NOT registered under country Portugal and France.
+SELECT id, name, surname
+FROM users
+WHERE NOT IN ('FR' , 'PT');
+--------------------------
+--3. Create an SQL Query which retrieves the id, name and surname of all registered users which are still active.
+ SELECT name, surname, emails
+ FROM users u
+ RIGHT JOIN users_creds uc ON u.id = uc.id;
+--------------------------
+--4. Create an SQL Query which retrieves the name, surname and emails of all registered users which requires a reset password.
+
+ SELECT name, surname, emails
+ FROM users u
+ JOIN users_creds uc ON u.id = uc.id
+ WHERE u.require_reset_password = 1;
