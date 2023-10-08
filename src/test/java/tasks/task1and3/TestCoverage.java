@@ -1,4 +1,4 @@
-package task1and3;
+package tasks.task1and3;
 
 import java.util.ArrayList;
 import org.testng.annotations.Test;
