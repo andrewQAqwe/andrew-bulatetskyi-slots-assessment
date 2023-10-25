@@ -29,6 +29,7 @@ public class EditorTest extends BaseTest {
         loginPage.clickLoginButton();
         editorPage.openNotesMenu();
 
+
         Assert.assertEquals(editorPage.getNotesCreationTime(), "Just now",
                 "This is not the last note created");
     }

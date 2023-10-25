@@ -12,9 +12,7 @@ public class LoginTest extends BaseTest {
     @Test(priority = 0)
     public void wrongLoginTest() {
 
-        loginPage.clickLoginLink();
-        loginPage.enterUsername(WRONG_USERNAME);
-        loginPage.clickLoginButton();
+        loginPage.clickLoginLink().enterUsername(WRONG_USERNAME).clickLoginButton();
 
         Assert.assertEquals(loginPage.getWrongEmailErrorMessage(),
                 "There is no account for the username or email you entered.",
@@ -24,13 +22,16 @@ public class LoginTest extends BaseTest {
     @Test(priority = 1)
     public void loginTest() {
 
-        loginPage.clearUsernameField();
-        loginPage.enterUsername(USERNAME);
-        loginPage.clickLoginButton();
-        loginPage.enterPassword(PASSWORD);
-        loginPage.clickLoginButton();
+        loginPage.clearUsernameField().enterUsername(USERNAME).clickLoginButton().enterPassword(PASSWORD)
+                .clickLoginButton();
 
         Assert.assertEquals(editorPage.getUserEmailElement(), USERNAME,
                 "User's email is incorrect");
+    }
+
+    @Test
+    public void myTest(){
+        var third = "test";
+        System.out.println(third);
     }
 }
